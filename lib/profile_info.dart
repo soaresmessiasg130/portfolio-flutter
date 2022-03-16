@@ -30,14 +30,14 @@ class ProfileInfo extends StatelessWidget {
     children: [
       Text(
         "Hi there! My name is",
-        textScaleFactor: 2,
+        textScaleFactor: 1.5,
         style: TextStyle(
           color: Colors.deepPurple,
         ),
       ),
       Text(
         "Messias\nSoares",
-        textScaleFactor: 5,
+        textScaleFactor: 4,
         style: TextStyle(
           color: Colors.deepPurple,
         ),
@@ -46,14 +46,12 @@ class ProfileInfo extends StatelessWidget {
         height: 10,
       ),
       Text(
-        // "Um desenvolvedor BackEnd que ama solucionar problemas.\n"
-        // "Buscando implementar ideias focando em qualidade e tempo!\n"
-        // "FrontEnd é minha paixão! Me sinto honrado em contribuir\n"
-        // "na experiência do usuário: desenvolvendo soluções completas.",
-        "An small text",
+        "Amo solucionar problemas",
         softWrap: true,
-        textScaleFactor: 1.5,
-        style: TextStyle(color: Colors.white70, fontWeight: FontWeight.bold),
+        style: TextStyle(
+          color: Colors.white70,
+          fontWeight: FontWeight.bold,
+        ),
       ),
       SizedBox(
         height: 20,
@@ -61,25 +59,16 @@ class ProfileInfo extends StatelessWidget {
       Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          RaisedButton(
-            shape: StadiumBorder(),
+          ElevatedButton(
             child: Text("Resume"),
-            color: Colors.deepPurple,
             onPressed: () {},
-            padding: EdgeInsets.all(20),
           ),
           SizedBox(
             width: 20,
           ),
-          OutlineButton(
-            borderSide: BorderSide(
-              color: Colors.deepPurpleAccent,
-            ),
-            shape: StadiumBorder(),
+          OutlinedButton(
             child: Text("Say Hi!"),
-            color: Colors.deepPurple,
             onPressed: () {},
-            padding: EdgeInsets.all(10),
           ),
         ],
       ),
@@ -88,22 +77,24 @@ class ProfileInfo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ResponsiveWidget(
-      largeScreen: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: <Widget>[profileImage(context), profileData],
-      ),
-      smallScreen: Column(
-        mainAxisSize: MainAxisSize.max,
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: <Widget>[
-          profileImage(context),
-          SizedBox(
-            height: MediaQuery.of(context).size.height * 0.1,
-          ),
-          profileData
-        ],
+    return Container(
+      child: ResponsiveWidget(
+        largeScreen: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: <Widget>[profileImage(context), profileData],
+        ),
+        smallScreen: Column(
+          mainAxisSize: MainAxisSize.max,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: <Widget>[
+            profileImage(context),
+            SizedBox(
+              height: MediaQuery.of(context).size.height * 0.1,
+            ),
+            profileData
+          ],
+        ),
       ),
     );
   }

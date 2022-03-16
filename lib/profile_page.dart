@@ -11,44 +11,46 @@ class ProfilePage extends StatelessWidget {
     return ResponsiveWidget(
       largeScreen: Scaffold(
         backgroundColor: Colors.black,
-        appBar: AppBar(
-          elevation: 0.0,
-          backgroundColor: Colors.black,
-        ),
         drawer: ResponsiveWidget.isSmallScreen(context)
             ? Drawer(
                 child: ListView(
-                padding: const EdgeInsets.all(16),
-                children: <Widget>[
-                  NavButton(
-                    text: "about",
-                    onPressed: () {},
-                  ),
-                  NavButton(
-                    text: "work",
-                    onPressed: () {},
-                  ),
-                  NavButton(
-                    text: "contact",
-                    onPressed: () {},
-                  )
-                ],
-              ))
+                  padding: const EdgeInsets.all(16),
+                  children: <Widget>[
+                    NavButton(
+                      text: "about",
+                      onPressed: () {},
+                    ),
+                    NavButton(
+                      text: "work",
+                      onPressed: () {},
+                    ),
+                    NavButton(
+                      text: "contact",
+                      onPressed: () {},
+                    )
+                  ],
+                ),
+              )
             : null,
         body: SingleChildScrollView(
           child: AnimatedPadding(
-              duration: Duration(seconds: 1),
-              padding: EdgeInsets.all(MediaQuery.of(context).size.height * 0.1),
-              child: ResponsiveWidget(
-                  largeScreen: Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: <Widget>[
-                    NavHeader(),
-                    SizedBox(height: MediaQuery.of(context).size.height * 0.1),
-                    ProfileInfo(),
-                    SizedBox(height: MediaQuery.of(context).size.height * 0.2),
-                    SocialInfo()
-                  ]))),
+            duration: Duration(
+              seconds: 1,
+            ),
+            padding: EdgeInsets.all(
+              MediaQuery.of(context).size.height * 0.1,
+            ),
+            child: ResponsiveWidget(
+              largeScreen: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  NavHeader(),
+                  ProfileInfo(),
+                  SocialInfo(),
+                ],
+              ),
+            ),
+          ),
         ),
       ),
     );

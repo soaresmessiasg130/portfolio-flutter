@@ -9,9 +9,11 @@ class MyPortifolio extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-          brightness: Brightness.dark,
-          primaryColor: Colors.black,
-          fontFamily: "GoogleSansRegular"),
+        fontFamily: "GoogleSans Regular",
+        primaryColor: Colors.black,
+        brightness: Brightness.dark,
+        primarySwatch: Colors.deepPurple,
+      ),
       home: ProfilePage(),
     );
   }

@@ -5,28 +5,18 @@ class NavButton extends StatelessWidget {
   final onPressed;
   final Color color;
 
-  const NavButton ({
-    Key key,
-    @required 
-    this.text, 
-    this.onPressed,
-    this.color = Colors.deepPurpleAccent
-  }) : super (
-    key: key
-  );
-
+  const NavButton(
+      {Key key,
+      @required this.text,
+      this.onPressed,
+      this.color = Colors.deepPurpleAccent})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return OutlineButton (
-      child: Text (
-        text
-      ),
-      borderSide: BorderSide (
-        color: color
-      ),
+    return OutlinedButton(
+      child: Text(text),
       onPressed: onPressed,
-      highlightedBorderColor: color,
     );
   }
 }
